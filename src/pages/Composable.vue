@@ -25,20 +25,10 @@
 </template>
 
 <script setup>
-import { ref, onMounted, watch } from "vue";
 import Loading from "../components/Loading.vue";
 import { useProducts } from "../composable/useProducts";
-// import { useInterSectionObServer } from "../composable/useIntersectionObserver";
 
-const loadmore = ref(null);
-// const { isInterSecting } = useInterSectionObServer(loadmore);
-const { products, error, loading, fetchProducts } = useProducts();
-
-// watch(isInterSecting, (newValue) => {
-//   if (newValue) {
-//     fetchProducts();
-//   }
-// });
+const { products, loading, fetchProducts } = useProducts();
 
 fetchProducts();
 const test = () => {
